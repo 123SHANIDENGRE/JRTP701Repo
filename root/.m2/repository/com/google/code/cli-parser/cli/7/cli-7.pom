@@ -1,0 +1,22 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.code.cli-parser</groupId>
+  <artifactId>cli</artifactId>
+  <version>7</version>
+  <name>Command Line Interface Parser for Java</name>
+  <description>
+    Using annotations you can make very succinct main methods that don't need to know how to parse command line arguments with either fields, properties, or method based injection.
+  </description>
+  <url>http://code.google.com/p/cli-parser/</url>
+  <scm>
+    <connection>scm:svn:http://cli-parser.googlecode.com/svn/trunk/</connection>
+    <url>http://cli-parser.googlecode.com/svn/trunk/</url>
+  </scm>
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+</project>

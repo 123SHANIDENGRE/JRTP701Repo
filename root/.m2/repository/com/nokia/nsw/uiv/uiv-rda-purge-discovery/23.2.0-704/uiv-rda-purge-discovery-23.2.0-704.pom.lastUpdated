@@ -1,0 +1,9 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Dec 28 18:56:32 IST 2023
+http\://repo3.cci.nokia.net/artifactory/uiv-mvn-dependencies/.error=
+http\://repo3.cci.nokia.net/artifactory/uiv-mvn-releases/.lastUpdated=1703769992754
+https\://repo.lab.pl.alcatel-lucent.com/example-mvn-dependencies/.error=
+https\://repo.lab.pl.alcatel-lucent.com\:443/libs-snapshot/.lastUpdated=1703769988129
+https\://repo.lab.pl.alcatel-lucent.com\:443/libs-snapshot/.error=
+http\://repo3.cci.nokia.net/artifactory/uiv-mvn-dependencies/.lastUpdated=1703769989800
+https\://repo.lab.pl.alcatel-lucent.com/example-mvn-dependencies/.lastUpdated=1703769987321

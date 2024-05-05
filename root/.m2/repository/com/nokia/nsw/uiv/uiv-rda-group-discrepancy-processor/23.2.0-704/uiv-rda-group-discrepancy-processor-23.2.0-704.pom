@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>uiv-rda-group-discrepancy-processor</artifactId>
+	<name>uiv-rda-group-discrepancy-processor</name>
+	<description>Federation: Discrepancy grouping and Sequencing Processing by RDA</description>
+	<packaging>jar</packaging>
+	
+	<properties>
+		<version.uiv>23.2.0-704</version.uiv>
+		<jaxb2-maven-plugin.version>2.5.0</jaxb2-maven-plugin.version>
+	</properties>
+	
+	<parent>
+		<groupId>com.nokia.nsw.uiv</groupId>
+		<artifactId>uiv-parent</artifactId>
+		<version>23.2.0-704</version>
+	</parent>
+	
+	<dependencyManagement>
+	    <dependencies>
+	        <dependency>
+	            <groupId>org.apache.kafka</groupId>
+				<artifactId>kafka-streams</artifactId>
+				<version>3.3.2</version>
+	        </dependency>
+	        
+	        <dependency>
+				<groupId>org.apache.kafka</groupId>
+				<artifactId>kafka-clients</artifactId>
+				<version>3.3.2</version>
+			</dependency>
+	    </dependencies>
+	</dependencyManagement>
+	
+	<dependencies>
+		<dependency>
+			<groupId>com.nokia.nsw.uiv</groupId>
+			<artifactId>uiv-rda-streamer</artifactId>
+			<version>23.2.0-704</version>
+		</dependency>
+		<dependency>
+			<groupId>com.nokia.nsw.uiv</groupId>
+			<artifactId>uiv-objectstore-client</artifactId>
+			<version>23.2.0-704</version>
+		</dependency>
+		<dependency>
+			<groupId>com.nokia.nsw.uiv</groupId>
+			<artifactId>uiv-rda-group-discrepancy-framework</artifactId>
+			<version>23.2.0-704</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka-streams</artifactId>
+			<version>3.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka-clients</artifactId>
+			<version>3.2.2</version>
+		</dependency>
+	</dependencies>
+	
+</project>

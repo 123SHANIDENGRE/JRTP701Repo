@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.nokia.nsw.uiv.rda.reconciliation</groupId>
+    <artifactId>uiv-rda-manual-recon-adapter</artifactId>
+    <packaging>jar</packaging>
+    <version>23.2.0-704</version>
+    <name>uiv-manual-reconciliation-adapter</name>
+    <description>To generate floe plugin project</description>
+
+    <properties>
+        <jdk.version>11</jdk.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+
+    <!-- <url>http://maven.apache.org</url> -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <finalName>${project.artifactId}-floe-adapter</finalName>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.nokia.oss.sure</groupId>
+            <artifactId>uiv-floe-adapter-framework</artifactId>
+            <version>23.2.0-704</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nokia.nsw.uiv</groupId>
+            <artifactId>uiv-rda-streamer</artifactId>
+            <version>23.2.0-704</version>
+        </dependency>
+
+        <!-- <dependency> <groupId>com.nokia.nsw.uiv</groupId> <artifactId>uiv-dm-rest</artifactId>
+            <version>23.2.0-704</version> <exclusions> <exclusion> <groupId>org.reflections</groupId>
+            <artifactId>reflections</artifactId> </exclusion> <exclusion> <groupId>com.nokia.nsw.uiv</groupId>
+            <artifactId>uiv-core</artifactId> </exclusion> <exclusion> <groupId>io.leangen.graphql</groupId>
+            <artifactId>graphql-spqr-spring-boot-starter</artifactId> </exclusion> </exclusions>
+            </dependency> -->
+        <dependency>
+            <groupId>com.nokia.nsw.uiv</groupId>
+            <artifactId>uiv-rda-dm-ignite</artifactId>
+            <version>23.2.0-704</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nokia.nsw.uiv</groupId>
+            <artifactId>uiv-rda-discrepancy-manager</artifactId>
+            <version>23.2.0-704</version>
+        </dependency>
+    </dependencies>
+</project>

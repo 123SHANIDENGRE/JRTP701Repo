@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.nokia.nsw.uiv</groupId>
+    <artifactId>uiv-codegen</artifactId>
+    <version>23.2.0-704</version>
+    <packaging>jar</packaging>
+    <parent>
+        <groupId>com.nokia.nsw.uiv</groupId>
+        <artifactId>uiv-parent</artifactId>
+        <version>23.2.0-704</version>
+    </parent>
+    <dependencies>
+        <dependency>
+            <groupId>com.nokia.nsw.uiv</groupId>
+            <artifactId>uiv-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup</groupId>
+            <artifactId>javapoet</artifactId>
+            <version>${javapoet.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.seancfoley</groupId>
+            <artifactId>ipaddress</artifactId>
+            <version>5.2.1</version>
+        </dependency>
+    </dependencies>
+</project>

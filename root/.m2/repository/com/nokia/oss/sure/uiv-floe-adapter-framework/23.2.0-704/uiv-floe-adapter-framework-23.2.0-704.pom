@@ -1,0 +1,130 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.nokia.oss.sure</groupId>
+	<artifactId>uiv-floe-adapter-framework</artifactId>
+	<version>23.2.0-704</version>
+
+	<name>uiv-floe-adapter-framework</name>
+
+	<properties>
+		<version.uiv>23.2.0-704</version.uiv>
+		<jaxb2-maven-plugin.version>2.5.0</jaxb2-maven-plugin.version>
+		<jlibs.version>2.2.2</jlibs.version>
+		<saxon-he.version>9.9.1-5</saxon-he.version>
+		<jsurfer-fastjson.version>1.5.1</jsurfer-fastjson.version>
+	</properties>
+
+	<parent>
+		<groupId>com.nokia.nsw.uiv</groupId>
+		<artifactId>uiv-parent</artifactId>
+		<version>23.2.0-704</version>
+	</parent>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>jaxen</groupId>
+			<artifactId>jaxen</artifactId>
+			<version>1.1.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.nokia.nsw.uiv</groupId>
+			<artifactId>uiv-dm-rest</artifactId>
+			<version>23.2.0-704</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.wiztools</groupId>
+			<artifactId>xsd-gen</artifactId>
+			<version>0.2.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.nokia.nsw.uiv</groupId>
+			<artifactId>uiv-stream-metadata</artifactId>
+			<version>23.2.0-704</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.nokia.nsw.uiv</groupId>
+			<artifactId>uiv-floe-tef</artifactId>
+			<version>23.2.0-704</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.nokia.nsw.uiv</groupId>
+			<artifactId>uiv-adapter-transformation-core</artifactId>
+			<version>23.2.0-704</version>
+		</dependency>
+		<dependency>
+			<groupId>com.nokia.nsw.uiv</groupId>
+			<artifactId>uiv-objectstore-client</artifactId>
+			<version>23.2.0-704</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+		    <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.0</version>
+            </plugin> 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.2.0</version>
+				<executions>
+					<execution>
+						<id>default-jar</id>
+						<phase>package</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<configuration>
+							<excludes>
+								<exclude>com.nokia.nsw.uiv.solution.adapter.config.xsd.adapterfilter/**/*</exclude>
+							</excludes>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxb2-maven-plugin</artifactId>
+				<version>${jaxb2-maven-plugin.version}</version>
+				<executions>
+					<execution>
+						<id>stitchingconfig</id>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>src/main/plugin/</source>
+							</sources>
+							<packageName>com.nokia.oss.sure.adapter.plugin.config</packageName>
+							<removeOldOutput>true</removeOldOutput>
+							<clearOutputDir>false</clearOutputDir>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/plugin</directory>
+				<includes>
+					<include>**/*.xsd</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+	</build>
+	
+	</project>

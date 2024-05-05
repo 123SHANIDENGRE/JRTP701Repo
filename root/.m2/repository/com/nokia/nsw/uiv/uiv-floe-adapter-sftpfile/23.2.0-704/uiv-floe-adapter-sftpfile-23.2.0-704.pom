@@ -1,0 +1,28 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.nokia.nsw.uiv</groupId>
+	<artifactId>uiv-floe-adapter-sftpfile</artifactId>
+	<version>23.2.0-704</version>
+	<packaging>jar</packaging>
+
+	<parent>
+		<groupId>com.nokia.nsw.uiv</groupId>
+		<artifactId>uiv-parent</artifactId>
+		<version>23.2.0-704</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.nokia.nsw.uiv</groupId>
+			<artifactId>uiv-floe-tef</artifactId>
+			<version>23.2.0-704</version>
+		</dependency>
+		<dependency>
+			<groupId>com.nokia.oss.sure</groupId>
+			<artifactId>uiv-floe-adapter-framework</artifactId>
+			<version>23.2.0-704</version>
+		</dependency>
+	</dependencies>
+</project>

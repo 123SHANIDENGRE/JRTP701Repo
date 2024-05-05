@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.nokia.nsw.uiv</groupId>
+	<artifactId>uiv-stitching-framework</artifactId>
+	<version>23.2.0-704</version>
+
+	<name>uiv-stitching-framework</name>
+
+	<properties>
+		<version.uiv>23.2.0-704</version.uiv>
+		<jaxb2-maven-plugin.version>2.4</jaxb2-maven-plugin.version>
+		<jlibs.version>2.2.2</jlibs.version>
+	</properties>
+
+	<parent>
+		<groupId>com.nokia.nsw.uiv</groupId>
+		<artifactId>uiv-parent</artifactId>
+		<version>23.2.0-704</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.nokia.oss.sure</groupId>
+			<artifactId>uiv-floe-adapter-framework</artifactId>
+			<version>23.2.0-704</version>
+		</dependency>
+		<dependency>
+			<groupId>com.nokia.nsw.uiv</groupId>
+			<artifactId>uiv-rda-streamer</artifactId>
+			<version>23.2.0-704</version>
+		</dependency>
+		<dependency>
+			<groupId>com.nokia.nsw.uiv</groupId>
+			<artifactId>uiv-rda-neo-extn-utils</artifactId>
+			<version>23.2.0-704</version>
+		</dependency>
+		<dependency>
+			<groupId>com.nokia.nsw.uiv</groupId>
+			<artifactId>uiv-rda-neo-extension</artifactId>
+			<version>23.2.0-704</version>
+		</dependency>
+	</dependencies>
+</project>

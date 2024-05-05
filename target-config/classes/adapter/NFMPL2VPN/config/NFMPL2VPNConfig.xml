@@ -1,0 +1,32 @@
+<AdapterConfiguration name="NFMPL2VPN"
+	ParserType="JSON">
+
+	<Collections>
+		<Collection Name="NFMPL2VPNCollection">
+			<TransformationFilters>
+				<TransformationFilter
+					Name="NFMPL2VPNTransformation" NoOfThread="4">
+					<TransformerFile>NFMPL2VPNInclude.xml</TransformerFile>
+					<FileNamePattern>*.json</FileNamePattern>
+				</TransformationFilter>
+			</TransformationFilters>
+		</Collection>
+	</Collections>
+
+	<EntityOptions>
+		<DefaultFilterHandler>com.nokia.nsw.uiv.adapter.handler.xml.NFMPL2VPNGenericNodeHandler</DefaultFilterHandler>
+		<DefaultMarkForAsso>true</DefaultMarkForAsso>
+	</EntityOptions>
+	
+	<ParserOptions>
+		<XMLOptions>
+			<NameSpaces>
+				<NameSpace>
+					<Prefix>xsd</Prefix>
+					<NameSpaceIdentifier>http://www.w3.org/2001/XMLSchema</NameSpaceIdentifier>
+				</NameSpace>
+			</NameSpaces>
+		</XMLOptions>
+	</ParserOptions>
+
+</AdapterConfiguration>

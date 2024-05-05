@@ -1,0 +1,25 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Dec 28 18:58:28 IST 2023
+https\://repo.cci.nokia.net/artifactory/nswps-mvn-inprogress-local/.lastUpdated=1703770098685
+http\://repo3.cci.nokia.net/artifactory/uiv-mvn-dependencies/.error=
+https\://repo.lab.pl.alcatel-lucent.com/npm-remote/.error=
+https\://repo.lab.pl.alcatel-lucent.com/npm-remote/.lastUpdated=1703770103014
+https\://repo.lab.pl.alcatel-lucent.com/maven-repository-redhat-com-ga/.lastUpdated=1703770106589
+https\://repo.lab.pl.alcatel-lucent.com\:443/libs-snapshot/.lastUpdated=1703770093046
+https\://repo.lab.pl.alcatel-lucent.com/maven-repository-redhat-com-ga/.error=
+http\://repo3.cci.nokia.net/artifactory/uiv-mvn-candidates/.error=
+https\://repo.lab.pl.alcatel-lucent.com/repository-jboss-org/.lastUpdated=1703770101365
+http\://repo3.cci.nokia.net/artifactory/uiv-mvn-releases/.lastUpdated=1703770095956
+https\://repo.lab.pl.alcatel-lucent.com/example-mvn-dependencies/.error=
+https\://repo.lab.pl.alcatel-lucent.com/repository_apache_org_snapshots/.lastUpdated=1703770102223
+https\://repo.lab.pl.alcatel-lucent.com/packages-confluent-io-maven/.lastUpdated=1703770108242
+http\://repo3.cci.nokia.net/artifactory/uiv-mvn-candidates/.lastUpdated=1703770100119
+https\://repo.lab.pl.alcatel-lucent.com/repository_apache_org_snapshots/.error=
+https\://repo.lab.pl.alcatel-lucent.com\:443/libs-snapshot/.error=
+http\://repo3.cci.nokia.net/artifactory/uiv-mvn-dependencies/.lastUpdated=1703770094487
+https\://repo.lab.pl.alcatel-lucent.com/repository-jboss-org/.error=
+https\://repo.lab.pl.alcatel-lucent.com/example-mvn-dependencies/.lastUpdated=1703770092238
+https\://repo.cci.nokia.net/artifactory/nswps-mvn-inprogress-local/.error=
+https\://repo.lab.pl.alcatel-lucent.com/aado-mvn-dependencies/.error=
+https\://repo.lab.pl.alcatel-lucent.com/aado-mvn-dependencies/.lastUpdated=1703770105328
+http\://repo3.cci.nokia.net/artifactory/uiv-mvn-releases/.error=

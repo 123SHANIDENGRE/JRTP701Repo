@@ -1,0 +1,161 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>uiv-adapter-transformation-core</artifactId>
+
+	<name>uiv-adapter-transformation-core</name>
+
+	<properties>
+		<version.uiv>23.2.0-704</version.uiv>
+		<jaxb2-maven-plugin.version>2.5.0</jaxb2-maven-plugin.version>
+		<jlibs.version>2.2.2</jlibs.version>
+		<saxon-he.version>9.9.1-5</saxon-he.version>
+		<jsurfer-fastjson.version>1.5.1</jsurfer-fastjson.version>
+		<rocksdb.version>6.11.4</rocksdb.version>
+	</properties>
+
+	<parent>
+		<groupId>com.nokia.nsw.uiv</groupId>
+		<artifactId>uiv-parent</artifactId>
+		<version>23.2.0-704</version>
+	</parent>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>net.sf.saxon</groupId>
+			<artifactId>Saxon-HE</artifactId>
+			<version>${saxon-he.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.jsurfer</groupId>
+			<artifactId>jsurfer-jackson</artifactId>
+			<version>${jsurfer-fastjson.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>in.jlibs</groupId>
+			<artifactId>jlibs-xmldog</artifactId>
+			<version>${jlibs.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>in.jlibs</groupId>
+			<artifactId>jlibs-core</artifactId>
+			<version>${jlibs.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>in.jlibs</groupId>
+			<artifactId>jlibs-xml</artifactId>
+			<version>${jlibs.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.nokia.nsw.uiv</groupId>
+			<artifactId>uiv-stream-metadata</artifactId>
+			<version>23.2.0-704</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.nokia.nsw.uiv</groupId>
+			<artifactId>uiv-rda-exceptions</artifactId>
+			<version>23.2.0-704</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.rocksdb</groupId>
+			<artifactId>rocksdbjni</artifactId>
+			<version>${rocksdb.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>backport-util-concurrent</groupId>
+			<artifactId>backport-util-concurrent</artifactId>
+			<version>3.1</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.nokia.nsw.uiv</groupId>
+			<artifactId>uiv-rda-metrics</artifactId>
+			<version>23.2.0-704</version>
+		</dependency>
+        <dependency>
+            <groupId>com.nokia.nsw.uiv</groupId>
+            <artifactId>uiv-objectstore-client</artifactId>
+            <version>23.2.0-704</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxb2-maven-plugin</artifactId>
+				<version>${jaxb2-maven-plugin.version}</version>
+				<executions>
+					<execution>
+						<id>adapterconfig</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+						<configuration>
+							<forceRegenerate>true</forceRegenerate>
+							<sources>
+								<source>${project.basedir}/src/main/resources/schema/AdapterConfig</source>
+							</sources>
+							<packageName>com.nokia.nsw.uiv.framework.adapter.config.xsd.adapterconfig</packageName>
+							<outputDirectory>${project.build.directory}/generated-sources/adapterconfig</outputDirectory>
+						</configuration>
+					</execution>
+					<execution>
+						<id>adapterfilter</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+						<configuration>
+							<forceRegenerate>true</forceRegenerate>
+							<sources>
+								<source>${project.basedir}/src/main/resources/schema/EntityConfig</source>
+							</sources>
+							<packageName>com.nokia.nsw.uiv.solution.adapter.config.xsd.entityconfig</packageName>
+							<outputDirectory>${project.build.directory}/generated-sources/entityconfig</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+		<resources>
+			<resource>
+				<directory>src/main/resources/schema/AdapterConfig</directory>
+				<includes>
+					<include>*.xsd</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources/schema/EntityConfig</directory>
+				<includes>
+					<include>*.xsd</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+
+	</build>
+
+</project>
+

@@ -1,0 +1,66 @@
+<EntityList name="NFMPFilterGroup" RootFilterExpression="$[?(@.className=='netw.NetworkElement')]" FilterHandler="com.nokia.nsw.uiv.adapter.handler.xml.NFMPL2VPNGenericNodeHandler">
+	<Entity type="Configuration" markForAsso="true">
+		<Filter>			
+			<ValueExpression>contains(/JsonRootNode/className,'netw.NetworkElement') 
+			</ValueExpression>
+		</Filter>
+		<AttributeList>
+			<Attribute>
+				<Name>LocalName</Name>
+				<ValueExpression>concat('B-MAC/',/JsonRootNode/pbbSrcBVplsMacAddr)</ValueExpression>
+                <Context>
+					<ValueExpression/>
+				</Context>				
+			</Attribute>
+			
+			<Attribute>
+				<Name>Context</Name>
+				<ValueExpression>concat(concat(substring-before(/JsonRootNode/objectFullName,concat(':',/JsonRootNode/name)),':'),/JsonRootNode/siteName)</ValueExpression>
+				<DefaultValue/>
+			</Attribute>
+			<Attribute>
+				<Name>Kind</Name>
+				<ValueExpression/>
+				<DefaultValue>BackboneSourceMAC</DefaultValue>
+			</Attribute>
+			
+			
+			<Attribute>
+				<Name>Category</Name>
+				<ValueExpression/>
+				<DefaultValue>BackboneSourceMAC</DefaultValue>
+			</Attribute>
+			<Attribute>
+				<Name>DiscoveredName</Name>
+				<ValueExpression>/JsonRootNode/objectFullName</ValueExpression>
+				<DefaultValue/>
+			</Attribute>
+			<Attribute>
+				<Name>DisplayName</Name>
+				<ValueExpression>concat('B-MAC/',/JsonRootNode/pbbSrcBVplsMacAddr)</ValueExpression>
+				<DefaultValue/>
+			</Attribute>
+			
+			<Attribute>
+				<Name>Property</Name>
+				<ValueExpression>/JsonRootNode/pbbSrcBVplsMacAddr</ValueExpression>
+				<Key>pbbSrcBVplsMacAddr</Key>
+			</Attribute>
+			
+		</AttributeList>
+		<AssoicationList>
+			<KeyBasedAssoication>
+				
+				
+				 <SelfKey>
+	           <Key>
+		        <Name>BackboneMac</Name>
+	    	    <ValueExpression>/JsonRootNode/siteId</ValueExpression>
+	            </Key>
+                </SelfKey>
+			
+				
+			</KeyBasedAssoication>
+		</AssoicationList>
+	</Entity>
+</EntityList>

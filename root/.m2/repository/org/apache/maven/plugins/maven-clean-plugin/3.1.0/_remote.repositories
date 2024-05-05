@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Dec 28 16:55:42 IST 2023
+maven-clean-plugin-3.1.0.jar>dependencies=
+maven-clean-plugin-3.1.0.pom>dependencies=

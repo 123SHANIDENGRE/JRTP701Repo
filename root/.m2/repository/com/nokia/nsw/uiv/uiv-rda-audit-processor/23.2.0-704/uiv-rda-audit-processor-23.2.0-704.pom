@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.nokia.nsw.uiv</groupId>
+	<version>23.2.0-704</version>
+	<artifactId>uiv-rda-audit-processor</artifactId>
+	<name>uiv-rda-audit-processor</name>
+	<description>Audit Processing by RDA</description>
+	<properties>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+	</properties>
+		<parent>
+		<groupId>com.nokia.nsw.uiv</groupId>
+		<artifactId>uiv-parent</artifactId>
+		<version>23.2.0-704</version>
+	</parent>
+    <dependencies>
+        <dependency>
+			<groupId>com.nokia.nsw.uiv</groupId>
+			<artifactId>uiv-stream-metadata</artifactId>
+			<version>23.2.0-704</version>
+		</dependency>
+    </dependencies>
+</project>

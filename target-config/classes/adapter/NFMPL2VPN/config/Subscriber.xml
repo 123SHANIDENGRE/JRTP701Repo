@@ -1,0 +1,57 @@
+<EntityList name="NFMPFilterGroup" 
+RootFilterExpression="$[?(@.className=='subscr.Subscriber')]" 
+FilterHandler="com.nokia.nsw.uiv.adapter.handler.xml.NFMPL2VPNGenericNodeHandler">
+	<Entity type="Configuration" markForAsso="true">
+		<Filter>
+			<ValueExpression>contains(/JsonRootNode/className,'subscr.Subscriber') 
+			</ValueExpression>
+		</Filter>
+		<AttributeList>
+			<Attribute>
+				<Name>LocalName</Name>
+				<ValueExpression>/JsonRootNode/name</ValueExpression>
+				<Context>
+					<ValueExpression></ValueExpression>
+				</Context>
+			</Attribute>
+			<Attribute>
+				<Name>Context</Name>
+				<ValueExpression>substring-before(/JsonRootNode/objectFullName,concat(':',/JsonRootNode/name))</ValueExpression>
+				<DefaultValue></DefaultValue>
+			</Attribute>
+             <Attribute>
+				<Name>Kind</Name>
+				<ValueExpression></ValueExpression>
+				<DefaultValue>AggServiceSubscriber</DefaultValue>
+			</Attribute>
+
+			<Attribute>
+				<Name>DiscoveredName</Name>
+				<ValueExpression>/JsonRootNode/objectFullName</ValueExpression>
+				<DefaultValue></DefaultValue>
+			</Attribute>
+			<Attribute>
+				<Name>DisplayName</Name>
+				<ValueExpression>/JsonRootNode/subscriberName</ValueExpression>
+				<DefaultValue></DefaultValue>
+			</Attribute>
+			
+
+               <Attribute>
+				<Name>Category</Name>
+				<ValueExpression></ValueExpression>
+				<DefaultValue>NFM-P Subscriber</DefaultValue>
+			</Attribute>
+			<Attribute>
+            <Name>Property</Name>
+            <ValueExpression>/JsonRootNode/subscriberName</ValueExpression>
+            <Key>SubscriberName</Key>
+         </Attribute>	
+		 <Attribute>
+            <Name>Property</Name>
+            <ValueExpression>/JsonRootNode/subscriberId</ValueExpression>
+            <Key>SubscriberId</Key>
+         </Attribute>	
+		</AttributeList>
+	</Entity>
+</EntityList>

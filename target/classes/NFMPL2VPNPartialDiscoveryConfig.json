@@ -1,0 +1,75 @@
+{
+  "FilterKey":{
+  "NetworkElements":"siteId",
+  "NetworkElements_Shelf":"siteId,shelfId",
+  "NetworkElements_Slot":"siteId,shelfId,slotId",
+  "NetworkElements_Card":"siteId,shelfId,slotId,displayedName",
+  "NetworkElements_DCardSlot":"siteId,shelfId,slotId,xiomCardSlotId,daughterCardSlotId",
+  "NetworkElements_DCard":"siteId,shelfId,slotId,xiomCardSlotId,daughterCardSlotId,displayedName",
+  "NetworkElements_Port":"siteId,shelfId,cardSlotId,xiomCardSlotId,daughterCardSlotId,portName",
+  "NetworkElements_XCard":"siteId,shelfId,slotId,xiomCardSlotId,displayedName",
+  "NetworkElements_XCardSlot":"siteId,shelfId,slotId,xiomCardSlotId",
+  "NetworkElements_Connector":"siteId,shelfId,cardSlotId,xiomCardSlotId,daughterCardSlotId,portName",
+  "NetworkElements_Lag":"siteId",
+  "NetworkElements_LPort":"nodeId",
+  "NetworkElements_MacName":"siteId",
+  "NetworkElements_SDPConnection":"siteId"
+  
+},
+ 
+"NetworkElement_payload":{
+  "fullClassName":"netw.NetworkElement"
+ },
+
+"NetworkElementFilterShelf_payload":{
+  "fullClassName":"equipment.Shelf"
+},
+
+ 
+"NetworkElementFilterSlot_payload":{
+"fullClassName":"equipment.Slot"
+},
+
+ 
+"NetworkElementFilterCard_payload":{
+ "fullClassName":"equipment.Card"
+},
+
+"NetworkElementFilterDCardSlot_payload":{
+  "fullClassName":"equipment.DaughterCardSlot"
+},
+
+
+"NetworkElementFilterDCard_payload":{
+ "fullClassName":"equipment.DaughterCard"
+},
+
+"NetworkElementFilterPort_payload":{
+  "fullClassName":"equipment.PhysicalPort"
+},
+
+"NetworkElementFilterXiomCardSlot_payload":{
+ "fullClassName":"equipment.XiomCardSlot"
+},
+
+"NetworkElementFilterXiomCard_payload":{
+ "fullClassName":"equipment.XiomCard"
+},
+
+"NetworkElementFilterConnector_payload":{
+ "fullClassName":"equipment.Connector"
+},
+"NetworkElementFilterLag_payload":{
+"fullClassName":"lag.Interface"
+},
+"NetworkElementFilterLPort_payload":{
+"fullClassName":"lag.PortTermination"
+},
+"NetworkElementFilterMacName_payload":{
+"fullClassName":"epipe.PbbMacName"
+},
+"NetworkElementFilterSDPConnection_payload":{
+"fullClassName":"svt.Tunnel"
+}
+
+}

@@ -1,0 +1,317 @@
+SeedGroup: Discovery
+SeedEntity: NFMPL2VPN
+Type: NetworkDiscovery
+SeedFeature:
+  #======================================================|
+  #Basic Parameters -Required by EA+DA Framework
+  #======================================================|
+  - Name: pipeline
+    Value: restpipeline
+    Category: Framework
+    Description: 'Decides the flow of execution, value is be taken from the pipeline file'
+    DataType: String
+    AllowedValue:
+    Optional: False
+    Modifiable: True
+  - Name: ui_enabled
+    Value: False
+    Category: Framework
+    Description: 'Weather to show in the UI or not'
+    DataType: String
+    AllowedValue:
+    Optional: False
+    Modifiable: True
+  - Name: skipProcessors
+    Value: EnrichmentProcessor,ActionInferenceProcessor,GroupDiscrepancyProcessor,GroupEligibilityProcessor,FederationManager
+    Category: Framework
+    Description: 'List of processors to be skiped for this discovery adapter'
+    DataType: String
+    AllowedValue: EnrichmentProcessor,ActionInferenceProcessor
+    Optional: True
+    Modifiable: True
+  - Name: adapterName
+    Value: NFMPL2VPN
+    Category: Framework
+    Description: 'Name of the adapter'
+    DataType: String
+    Optional: True
+    Modifiable: True
+  - Name: adapterClassName
+    Value: com.nokia.nsw.uiv.adapter.NFMPL2VPN
+    Category: Framework
+    Description: 'Name of the adapter class'
+    DataType: String
+    Optional: False
+    Modifiable: False
+  - Name: skipCollection
+    Value: False
+    Category: Framework
+    Description: 'If the value is True, collection will not run, transformation will start from localhostDirectory'
+    DataType: String
+    AllowedValue: True,False
+    Optional: True
+    Modifiable: True
+  - Name: ReconSource
+    Value: NFMPL2VPN
+    Category: Framework
+    Description: 'It will be used during  reconciliation of entity modification, its good idea to have unique recon source '
+    DataType: String
+    Optional: True
+    Modifiable: True
+  - Name: SharedReconSource
+    Value: Sritouivbatchadapter
+    Category: Framework
+    Description: 'It is like  ReconSource group, multiple ReconSource can be in single SharedReconSource, will be used for reconciliation of entity modification'
+    DataType: String
+    Optional: True
+    Modifiable: True
+  #=======================================================|
+  #:Transformation Parameters    -Required by DA Framework
+  #=======================================================|
+  - Name: localHostDirectory
+    Value:  /opt/adapterproc/File/NFMPL2VPN
+    Category: Framework
+    Description: 'Location where the fetched files kept'
+    DataType: String
+    Optional: False
+    Modifiable: True
+  - Name:  remoteHostDirectory
+    Value:  
+    Category: Framework
+    Description: 'The remote directory from where the file to be downloaded'
+    DataType: String
+    Optional: False
+    Modifiable: False
+  - Name: sftpHostname
+    Value: "T4iuhqTwVme0pPBmp9ByfA=="
+    Category: User
+    Description: IP address or Hostname to connect SFTP
+    DataType: String
+    AllowedValue: ""
+    Optional: "False"
+    Modifiable: "True"
+  - Name: sftpPort
+    Value: "22"
+    Category: User
+    Description: Integer Port number for SFTP Connection(22)
+    DataType: Number
+    AllowedValue: ""
+    Optional: "False"
+    Modifiable: "True"
+  - Name: sftpUsername
+    Value: ""
+    Category: User
+    Description: Valid username for sftp connection
+    DataType: String
+    AllowedValue: ""
+    Optional: "False"
+    Modifiable: "True"
+  - Name: sftpPassword
+    Value: ""
+    Category: User
+    Description: Valid password
+    DataType: String
+    AllowedValue: ""
+    Optional: "False"
+    Modifiable: "True"   
+  - Name:  adapterConfigFileDirectory
+    Value:  /opt/adapterproc/config/NFMPL2VPN/NFMPL2VPN/config
+    Category: Framework
+    Description: 'Adapter Transormation related configuration files will be taken from this directory'
+    DataType: String
+    Optional: False
+    Modifiable: False
+  - Name: adapterConfigFile
+    Value: NFMPL2VPNConfig.xml
+    Category: Framework
+    Description: 'Name of the main adapter config file'
+    DataType: String
+    Optional: False
+    Modifiable: False
+  - Name: byPassSsl
+    Value: "true"
+    Category: User
+    Description: If set to true, checking the SSL certificate validity will be disabled for accessing REST Endpoint
+    DataType: String
+    AllowedValue: ""
+    Optional: "True"
+    Modifiable: "True" 
+  - Name: maxRetry
+    Value: "1"
+    Category: User
+    Description: 'Integer Value which tells maximum number of retry while attempting for connection'
+    DataType: Number
+    AllowedValue: ""
+    Optional: "False"
+    Modifiable: "True"
+  - Name: sleepTimeForRetry
+    Value: "1"
+    Category: User
+    Description: Wait time before next retry in seconds
+    DataType: Integer
+    AllowedValue: ""
+    Optional: "False"
+    Modifiable: "True"
+  - Name: forceFtp
+    Value: "False"
+    Category: User
+    Description: This is to specify wheather to use ftp or sftp
+    DataType: String
+    AllowedValue: True,False
+    Optional: "True"
+    Modifiable: "True"
+  - Name:  outputMode
+    Value:
+    Category: Framework
+    Description: 'If the value is null output will be streamed, if the value is MDL output will be written to a file in MDL format'
+    DataType: String
+    AllowedValue: null,MDL
+    Optional: False
+    Modifiable: False
+  - Name: filePattern
+    Value:  '*.json'
+    Category: Framework
+    Description: 'File name pattern'
+    DataType: String
+    Optional: False
+    Modifiable: False
+  - Name: file
+    Value: level1
+    Category: User
+    Description: Name of the file to download
+    DataType: String
+    AllowedValue: ""
+    Optional: "False"
+    Modifiable: "True"
+  - Name: rawFileName
+    Value: '*.json'
+    Category: User
+    Description: File name to be downloaded
+    DataType: String
+    AllowedValue: ""
+    Optional: "False"
+    Modifiable: "True"
+  - Name: portNumber
+    Value: "22"
+    Category: User
+    Description: SFTP Port to connect and download the files
+    DataType: Integer
+    AllowedValue: ""
+    Optional: "False"
+    Modifiable: "True"
+  - Name: NfmpUserName
+    Value: "svc_agg_nfa_dv_uiv_local"
+    Category: User
+    Description: Valid username
+    DataType: String
+    AllowedValue: ""
+    Optional: "False"
+    Modifiable: "True"
+  - Name: NfmpPassword
+    Value: ""
+    Category: User
+    Description: Valid Password
+    DataType: String
+    AllowedValue: ""
+    Optional: "False"
+    Modifiable: "True"
+  - Name: endpointsnfmp
+    Value: /nfm-p/rest/api/v1/managedobjects/searchWithFilter
+    Category: User
+    Description: NFMP Endpoint path
+    DataType: String
+    AllowedValue: ""
+    Optional: "False"
+    Modifiable: "True" 
+  - Name:  NFMPL2VPNPartialDiscoveryConfigFile
+    Value: "/opt/adapterproc/config/NFMPL2VPN/NFMPL2VPN/config/NFMPL2VPNPartialDiscoveryConfig.json"
+    Category: Framework
+    Description: 'Config file for PartialDiscovery'
+    DataType: String
+    Optional: False
+    Modifiable: False
+  - Name: NFMPL2VPNResultFiltersConfigFile
+    Value: "/opt/adapterproc/config/NFMPL2VPN/NFMPL2VPN/config/NFMPL2VPNResultFiltersConfig.json"
+    Category: Framework
+    Description: 'Config file for ResultFilter'
+    DataType: String
+    Optional: False
+    Modifiable: False
+  - Name: nfmpIp
+    Value: "ansp-test-ssp.slb.nbndc.local/gateway/uiv-nfmp-token"
+    Category: User
+    Description: Valid IP Address or Hostnaem of NFMP
+    DataType: String
+    AllowedValue: ""
+    Optional: "False"
+    Modifiable: "True"
+  - Name: nfmpIpAndPort
+    Value: "ansp-test-ssp.slb.nbndc.local/gateway/uiv-nfmp"
+    Category: User
+    Description: <nfmpIP>:PORT
+    DataType: String
+    AllowedValue: ""
+    Optional: "False"
+    Modifiable: "True"
+  - Name: SREquipmentandIPVPNClasses
+    Value: netw.NetworkElement,equipment.Shelf,equipment.CardSlot,equipment.BaseCard,equipment.DaughterCardSlot,equipment.DaughterCard,equipment.XiomCard,equipment.XiomCardSlot,equipment.PhysicalPort,netw.DiscoveredPhysicalLink,lag.Interface,multichassis.MultiChassisLag,lag.PortTermination,epipe.PbbMacName,equipment.Connector,equipment.ProcessorCard,svt.Tunnel,subscr.Subscriber
+    Category: User
+    Description: List Equipment and IPVPN classes to process(comma seperated list)
+    DataType: String
+    AllowedValue: ""
+    Optional: "False"
+    Modifiable: "True"
+  - Name: TokenUrl
+    Value: /rest-gateway/rest/api/v1/auth/token
+    Category: User
+    Description: URL From where to obtain authentication token
+    DataType: String
+    AllowedValue: Url from where to obtain authentication token
+    Optional: "False"
+    Modifiable: "True"
+  - Name: includeAdapterNameInContext
+    Value: True
+    Category: User
+    Description: 'If the value is True, transformation will include context in Adapter Name'
+    DataType: String
+    AllowedValue: True,False
+    Optional: "False"
+    Modifiable: "True"
+  - Name: ConnectionTimeout
+    Value: "3600"
+    Category: User
+    Description: 'Configurable time in seconds before connection timeout'
+    DataType: Number
+    AllowedValue: ""
+    Optional: "False"
+    Modifiable: "True"
+  - Name: ReadTimeout
+    Value: "3600"
+    Category: User
+    Description: 'Configurable time in seconds before read timeout'
+    DataType: Number
+    AllowedValue: ""
+    Optional: "False"
+    Modifiable: "True"   
+  - Name: PROXY_USERNAME
+    Value: "SVC_HFS_UIV_NFMP_NP"
+    Category: User
+    Description: Valid username
+    DataType: String
+    AllowedValue: ""
+    Optional: "False"
+    Modifiable: "True"
+  - Name: PROXY_PASSWORD
+    Value: "iiDueIABY0Q4RY9uSpLt+9R10WHQyNuv3eAy2efFDiA="
+    Category: User
+    Description: Valid Password
+    DataType: String
+    AllowedValue: ""
+    Optional: "False"
+    Modifiable: "True"
+  - Name: includeAdapterNameInContextByKind
+    Value: 'AggShelf,AggConnector'
+    Modifiable: True
+    Description: 'if includeAdapterNameInContext is true and includeAdapterNameInContextByKind   contains Kind1, Kind2  then Adapter Name ONLY prefixed to entities with Kind1 or Kind2 ,if includeAdapterNameInContext is true and includeAdapterNameInContextByKind is empty  then Adapter Name prefixed to  all the entities '
+ 
+    

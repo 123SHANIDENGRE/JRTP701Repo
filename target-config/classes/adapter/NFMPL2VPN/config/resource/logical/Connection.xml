@@ -1,0 +1,31 @@
+<EntityList name="Connection"
+            addToCache="true"
+            RootFilterExpression="">   
+   <Entity type="Connection" markForAsso="true">
+      <AttributeList>
+		<Attribute>
+            <Name>LocalName</Name>
+            <ValueExpression></ValueExpression>
+			<Context>
+				<ValueExpression></ValueExpression>				
+			</Context>												
+         </Attribute>
+         <Attribute>
+            <Name>Kind</Name>
+            <ValueExpression>
+			</ValueExpression>
+            <DefaultValue>Connection</DefaultValue>
+         </Attribute> 		 
+      </AttributeList>
+      <AssoicationList>
+		<KeyBasedAssoication>
+			<SelfKey>
+				<Key>
+					<Name></Name>
+					<ValueExpression></ValueExpression>
+				</Key>
+			</SelfKey>
+	   </KeyBasedAssoication>
+	  </AssoicationList>
+   </Entity>
+</EntityList>

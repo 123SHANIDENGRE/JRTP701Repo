@@ -1,0 +1,31 @@
+<EntityList name="VirtualDevice"
+            addToCache="true"
+            RootFilterExpression="">   
+   <Entity type="VirtualDevice" markForAsso="true">
+      <AttributeList>
+		<Attribute>
+            <Name>LocalName</Name>
+            <ValueExpression></ValueExpression>
+			<Context>
+				<ValueExpression></ValueExpression>				
+			</Context>												
+         </Attribute>
+         <Attribute>
+            <Name>Kind</Name>
+            <ValueExpression>
+			</ValueExpression>
+            <DefaultValue>VirtualDevice</DefaultValue>
+         </Attribute> 		 
+      </AttributeList>
+      <AssoicationList>
+		<KeyBasedAssoication>
+			<SelfKey>
+				<Key>
+					<Name></Name>
+					<ValueExpression></ValueExpression>
+				</Key>
+			</SelfKey>
+	   </KeyBasedAssoication>
+	  </AssoicationList>
+   </Entity>
+</EntityList>

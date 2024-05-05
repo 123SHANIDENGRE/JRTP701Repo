@@ -1,0 +1,89 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>uiv-rda-plugin-framework</artifactId>
+    <packaging>jar</packaging>
+    <name>uiv-rda-plugin-framework</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>11</java.version>
+        <version.uiv>23.2.0-704</version.uiv>
+        <jaxb2-maven-plugin.version>2.5.0</jaxb2-maven-plugin.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+
+    <parent>
+        <groupId>com.nokia.nsw.uiv</groupId>
+        <artifactId>uiv-parent</artifactId>
+        <version>23.2.0-704</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.nokia.nsw.uiv</groupId>
+            <artifactId>uiv-stream-metadata</artifactId>
+            <version>23.2.0-704</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nokia.nsw.uiv</groupId>
+            <artifactId>uiv-floe-tef</artifactId>
+            <version>23.2.0-704</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nokia.oss.sure</groupId>
+            <artifactId>uiv-floe-adapter-framework</artifactId>
+            <version>23.2.0-704</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nokia.nsw.uiv</groupId>
+            <artifactId>uiv-model-common</artifactId>
+            <version>23.2.0-704</version>
+        </dependency>
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <version>${jaxb2-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>adapterconfig</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                        <configuration>
+                            <forceRegenerate>true</forceRegenerate>
+                            <sources>
+                                <source>${project.basedir}/src/main/resources/schema/PluginConfig</source>
+                            </sources>
+                            <packageName>com.nokia.nsw.uiv.rda.plugin.config.xsd.pluginconfig</packageName>
+                            <outputDirectory>${project.build.directory}/generated-sources/pluginconfig</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources/schema/PluginConfig</directory>
+                <includes>
+                    <include>*.xsd</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+    </build>
+</project>

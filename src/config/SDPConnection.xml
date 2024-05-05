@@ -1,0 +1,45 @@
+<EntityList name="NFMPFilterGroup"  RootFilterExpression="$[?(@.className=='svt.Tunnel')]"  FilterHandler="com.nokia.nsw.uiv.adapter.handler.xml.NFMPL2VPNGenericNodeHandler">   
+   <Entity type="Connection" markForAsso="true">
+            <Filter>
+			<ValueExpression>contains(/JsonRootNode/className,'svt.Tunnel') 
+			</ValueExpression>
+			</Filter>
+      <AttributeList>
+		<Attribute>                        
+            <Name>LocalName</Name>
+            <ValueExpression>/JsonRootNode/objectFullName</ValueExpression>
+			<Context>
+				<ValueExpression></ValueExpression>				
+			</Context>												
+         </Attribute>
+         <Attribute>
+            <Name>Kind</Name>
+            <ValueExpression>
+			</ValueExpression>
+            <DefaultValue>AggSDPConnection</DefaultValue>
+         </Attribute> 		
+         <Attribute>
+				<Name>DiscoveredName</Name>
+				<ValueExpression>/JsonRootNode/objectFullName</ValueExpression>
+				<DefaultValue/>
+			</Attribute>
+         
+    
+      </AttributeList>
+      <AssoicationList>
+		<KeyBasedAssoication>
+		
+		 <SelfKey>
+	           <Key>
+		       <Name>LogicalDeviceAssocWithSDP</Name>
+			   <ValueExpression>substring-before(substring-after(/JsonRootNode/name, "-" ),"-")</ValueExpression>
+			   
+	           </Key>
+               </SelfKey>
+		
+		
+			
+	   </KeyBasedAssoication>
+	  </AssoicationList>
+   </Entity>
+</EntityList>

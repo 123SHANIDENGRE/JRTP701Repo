@@ -1,0 +1,137 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>uiv-rda-group-discrepancy-framework</artifactId>
+	<name>uiv-rda-group-discrepancy-framework</name>
+	<description>Federation: Framework for Discrepancy grouping and Sequencing Processing by RDA</description>
+	<packaging>jar</packaging>
+	
+	<properties>
+		<version.uiv>23.2.0-704</version.uiv>
+		<jaxb2-maven-plugin.version>2.5.0</jaxb2-maven-plugin.version>
+		<rocksdb.version>6.11.4</rocksdb.version>
+	</properties>
+	
+	<parent>
+		<groupId>com.nokia.nsw.uiv</groupId>
+		<artifactId>uiv-parent</artifactId>
+		<version>23.2.0-704</version>
+	</parent>
+	
+	<dependencyManagement>
+	    <dependencies>
+	        <dependency>
+	            <groupId>org.apache.kafka</groupId>
+				<artifactId>kafka-streams</artifactId>
+				<version>3.3.2</version>
+	        </dependency>
+	        
+	        <dependency>
+				<groupId>org.apache.kafka</groupId>
+				<artifactId>kafka-clients</artifactId>
+				<version>3.3.2</version>
+			</dependency>
+	    </dependencies>
+	</dependencyManagement>
+	
+	<dependencies>
+		<dependency>
+			<groupId>com.nokia.nsw.uiv</groupId>
+			<artifactId>uiv-objectstore-client</artifactId>
+			<version>23.2.0-704</version>
+		</dependency>
+		<dependency>
+			<groupId>com.nokia.nsw.uiv</groupId>
+			<artifactId>uiv-stream-metadata</artifactId>
+			<version>23.2.0-704</version>
+		</dependency>
+		<dependency>
+			<groupId>org.rocksdb</groupId>
+			<artifactId>rocksdbjni</artifactId>
+			<version>${rocksdb.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka-streams</artifactId>
+			<version>3.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka-clients</artifactId>
+			<version>3.2.2</version>
+		</dependency>
+		
+		<!-- <dependency>
+			<groupId>com.nokia.nsw.uiv</groupId>
+    		<artifactId>uiv-base-classes</artifactId>
+    		<version>23.2.0-704</version>
+    		<scope>test</scope>
+    		<exclusions>
+    			<exclusion>
+    				<groupId>com.nokia.nsw.uiv</groupId>
+    				<artifactId>uiv-runtime</artifactId>
+    			</exclusion>
+    			<exclusion>
+    				<groupId>com.nokia.nsw.uiv</groupId>
+    				<artifactId>uiv-rda-plugin-framework</artifactId>
+    			</exclusion>
+    		</exclusions>
+		</dependency> -->
+		
+		<dependency>
+			<groupId>com.nokia.nsw.uiv</groupId>
+    		<artifactId>uiv-model-common</artifactId>
+    		<version>23.2.0-704</version>
+    		<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.nokia.nsw.uiv</groupId>
+    		<artifactId>uiv-process-router</artifactId>
+    		<version>23.2.0-704</version>
+    		<scope>test</scope>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxb2-maven-plugin</artifactId>
+				<version>${jaxb2-maven-plugin.version}</version>
+				<executions>
+					<execution>
+						<id>discrepancyconfig</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+						<configuration>
+							<forceRegenerate>true</forceRegenerate>
+							<sources>
+								<source>${project.basedir}/src/main/resources/schema/GroupDiscrepancy</source>
+							</sources>
+							<packageName>com.nokia.nsw.uiv.config.xsd.dgp</packageName>
+							<outputDirectory>${project.build.directory}/generated-sources/discrepancyconfig</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+		<resources>
+			<resource>
+				<directory>src/main/resources/schema/GroupDiscrepancy</directory>
+				<includes>
+					<include>*.xsd</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+
+	</build>
+
+</project>

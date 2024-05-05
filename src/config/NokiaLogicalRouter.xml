@@ -1,0 +1,153 @@
+<EntityList name="NFMPFilterGroup" RootFilterExpression="$[?(@.className=='netw.NetworkElement')]" FilterHandler="com.nokia.nsw.uiv.adapter.handler.xml.NFMPL2VPNGenericNodeHandler">
+	<Entity type="LogicalDevice" markForAsso="true">
+		<Filter>
+			<ValueExpression>contains(/JsonRootNode/className,'netw.NetworkElement') 
+			</ValueExpression>
+		</Filter>
+		<AttributeList>
+			<Attribute>                                                                                         
+				<Name>LocalName</Name>
+				<ValueExpression>concat(/JsonRootNode/siteName,'/',/JsonRootNode/siteId)</ValueExpression>
+				<Context>
+					<ValueExpression/>
+				</Context>
+			</Attribute>
+			<Attribute>
+				<Name>Context</Name>
+				<ValueExpression>substring-before(/JsonRootNode/objectFullName,concat(':',/JsonRootNode/name))</ValueExpression>
+				<DefaultValue/>
+			</Attribute>
+			<Attribute>
+				<Name>Kind</Name>
+				<ValueExpression/>
+				<DefaultValue>AggLogicalDevice</DefaultValue>
+			</Attribute>
+			<Attribute>
+				<Name>Category</Name>
+				<ValueExpression>/JsonRootNode/chassisType</ValueExpression>
+				<DefaultValue/>
+			</Attribute>
+			<Attribute>
+				<Name>DiscoveredName</Name>
+				<ValueExpression>/JsonRootNode/objectFullName</ValueExpression>
+				<DefaultValue/>
+			</Attribute>
+			<Attribute>
+				<Name>DisplayName</Name>
+				<ValueExpression>/JsonRootNode/displayedName</ValueExpression>
+				<DefaultValue/>
+			</Attribute>
+		
+			<Attribute>
+				<Name>Property</Name>
+				<ValueExpression>/JsonRootNode/siteId</ValueExpression>
+				<Key>siteId</Key>
+			</Attribute>
+			<Attribute>
+				<Name>Property</Name>
+				<ValueExpression>/JsonRootNode/siteName</ValueExpression>
+				<Key>siteName</Key>
+			</Attribute>
+			  <Attribute>
+				<Name>Property</Name>
+				<ValueExpression>/JsonRootNode/operationalState</ValueExpression>
+				<Key>aggOperationalState</Key>
+			</Attribute>
+			<Attribute>
+				<Name>Property</Name>
+				<ValueExpression>/JsonRootNode/administrativeState</ValueExpression>
+				<Key>aggAdministrativeState</Key>
+			</Attribute>
+		</AttributeList>
+		<AssoicationList>
+
+
+	<KeyBasedAssoication>
+		
+        
+              
+               
+					<SelfKey>
+					<Key>
+						<Name>LogicalEquipment</Name>
+						<!-- <ValueExpression>concat('CardSlotToCard/',/JsonRootNode/siteId,'/',/JsonRootNode/shelfId,'/',/JsonRootNode/slotId)</ValueExpression>-->
+						<ValueExpression>concat(/JsonRootNode/siteName,'/',/JsonRootNode/siteId)</ValueExpression>
+					</Key>
+				</SelfKey>
+				
+				
+				<JoinKey>
+					<Association>
+						<Target>Configuration</Target>
+						<Type>HAS</Type>
+					</Association>	
+					<Key>
+						<Name>MACEquipment</Name>
+						<ValueExpression>/JsonRootNode/siteId</ValueExpression>
+					</Key>
+				</JoinKey>
+				
+				<JoinKey>
+					<Association>
+						<Target>Connection</Target>
+						<Type>CONTAINS</Type>
+					</Association>
+					<Key>
+						<Name>LogicalDeviceAssocWithSDP</Name>
+						<ValueExpression>/JsonRootNode/name</ValueExpression>
+					</Key>
+				</JoinKey>	
+				
+				<JoinKey>
+					<Association>
+						<Target>LogicalInterface</Target>
+						<Type>CONTAINS</Type>
+					</Association>
+					<Key>
+						<Name>LaglogicaltoNokia</Name>
+						<ValueExpression>/JsonRootNode/siteId</ValueExpression>
+					</Key>
+				</JoinKey>
+				
+				
+				<JoinKey>
+					<Association>
+						<Target>LogicalInterface</Target>
+						<Type>CONTAINS</Type>
+					</Association>
+					<Key>
+						<Name>Laglogical</Name>
+						<ValueExpression>/JsonRootNode/siteId</ValueExpression>
+					</Key>
+				</JoinKey>
+				
+				
+				<JoinKey>
+					<Association>
+						<Target>LogicalInterface</Target>
+						<Type>CONTAINS</Type>
+					</Association>
+					<Key>
+						<Name>Laglogical1</Name>
+						<ValueExpression>/JsonRootNode/siteId</ValueExpression>
+					</Key>
+				</JoinKey>
+				
+				<JoinKey>
+					<Association>
+						<Target>Configuration</Target>
+						<Type>HAS</Type>
+					</Association>	
+					<Key>
+						<Name>BackboneMac</Name>
+						<ValueExpression>/JsonRootNode/siteId</ValueExpression>
+					</Key>
+				</JoinKey>
+				
+		
+           
+			
+			</KeyBasedAssoication>
+		</AssoicationList>
+	</Entity>
+</EntityList>

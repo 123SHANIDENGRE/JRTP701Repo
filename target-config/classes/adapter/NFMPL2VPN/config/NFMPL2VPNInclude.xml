@@ -1,0 +1,30 @@
+<EntityConfiguration name="NFMPL2VPN"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xi="http://www.w3.org/2001/XInclude">
+
+	<DiscoveryFilters>
+		<DiscoveryFilter level="NetworkDiscovery">
+			<xi:include href="/opt/adapterproc/config/NFMPL2VPN/NFMPL2VPN/config/NokiaRouter.xml"/>
+             <xi:include href="/opt/adapterproc/config/NFMPL2VPN/NFMPL2VPN/config/NokiaLogicalRouter.xml"/>
+			 <xi:include href="/opt/adapterproc/config/NFMPL2VPN/NFMPL2VPN/config/Shelf_SatelliteShelf.xml"/>
+			 <xi:include href="/opt/adapterproc/config/NFMPL2VPN/NFMPL2VPN/config/CardSlot_SatelliteCardSlot.xml"/>
+			 <xi:include href="/opt/adapterproc/config/NFMPL2VPN/NFMPL2VPN/config/Card_SatelliteCard.xml"/>
+			 <xi:include href="/opt/adapterproc/config/NFMPL2VPN/NFMPL2VPN/config/ProcessorCard.xml"/>
+			 <xi:include href="/opt/adapterproc/config/NFMPL2VPN/NFMPL2VPN/config/DaughterCardSlot_SatelliteDaughterCardSlot.xml"/>
+			 <xi:include href="/opt/adapterproc/config/NFMPL2VPN/NFMPL2VPN/config/DaughterCard_SatelliteDaughterCard.xml"/>
+			 <xi:include href="/opt/adapterproc/config/NFMPL2VPN/NFMPL2VPN/config/PhysicalPort_SatellitePhysicalPort.xml"/>
+			 <xi:include href="/opt/adapterproc/config/NFMPL2VPN/NFMPL2VPN/config/Connector_SatelliteConnector.xml"/>
+             <xi:include href="/opt/adapterproc/config/NFMPL2VPN/NFMPL2VPN/config/XiomCard.xml"/>
+             <xi:include href="/opt/adapterproc/config/NFMPL2VPN/NFMPL2VPN/config/XiomCardSlot.xml"/>
+             <xi:include href="/opt/adapterproc/config/NFMPL2VPN/NFMPL2VPN/config/LAGPort.xml"/>
+             <xi:include href="/opt/adapterproc/config/NFMPL2VPN/NFMPL2VPN/config/LAG.xml"/>
+             <xi:include href="/opt/adapterproc/config/NFMPL2VPN/NFMPL2VPN/config/BackbonesrcMAC.xml"/>
+             <xi:include href="/opt/adapterproc/config/NFMPL2VPN/NFMPL2VPN/config/Subscriber.xml"/>
+             <xi:include href="/opt/adapterproc/config/NFMPL2VPN/NFMPL2VPN/config/MACName.xml"/>
+             <xi:include href="/opt/adapterproc/config/NFMPL2VPN/NFMPL2VPN/config/MCLag.xml"/>
+			 <xi:include href="/opt/adapterproc/config/NFMPL2VPN/NFMPL2VPN/config/PhysicalLink.xml"/>
+			 <xi:include href="/opt/adapterproc/config/NFMPL2VPN/NFMPL2VPN/config/SDPConnection.xml"/>
+		</DiscoveryFilter>
+	</DiscoveryFilters>
+
+</EntityConfiguration>
